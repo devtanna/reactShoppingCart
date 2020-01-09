@@ -6,10 +6,10 @@ class Counter extends Component {
     tags: ["tag1", "tag2", "tag3"]
   }; // this is a class property
 
-  styles = {
-    fontSize: 20,
-    fontWeight: "bold"
-  };
+  // styles = {
+  //   fontSize: 20,
+  //   fontWeight: "bold"
+  // };
 
   handleIncrement = () => {
     this.setState({ count: this.state.count + 1 });
