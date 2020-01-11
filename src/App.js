@@ -14,6 +14,10 @@ class App extends Component {
     ]
   };
 
+  // constructor() {
+  //   super();
+  // }
+
   handleIncrement = counter => {
     const counters = this.state.counters.map(c => {
       if (c.id === counter.id) {
@@ -34,6 +38,13 @@ class App extends Component {
     this.setState({ counters });
   };
 
+  handleAdd = () => {
+    const counters = [...this.state.counters];
+    const newIndex = this.state.counters.length;
+    counters.push({ id: newIndex, value: 0 });
+    this.setState({ counters });
+  };
+
   handleDelete = counterId => {
     console.log("222", counterId);
     // dont edit the state.
@@ -51,6 +62,7 @@ class App extends Component {
         <main className="container">
           <Counters
             onReset={this.handleReset}
+            onAdd={this.handleAdd}
             onIncrement={this.handleIncrement}
             onDelete={this.handleDelete}
             counters={this.state.counters}
